@@ -24,8 +24,9 @@ public class DataInitializer implements CommandLineRunner { // 2. 서버 켜지�
         user.setNickname("test_nickname");
 
         // 5. 비서에게 이 유저를 DB에 저장하라고 시킨다.
-        userRepository.save(user);
-
-        System.out.println("DB에 테스트 유저 데이터가 들어감.");
+        if (userRepository.findByUsername("test_user").isEmpty()) {
+            userRepository.save(user);
+        }
+        System.out.println("유저 데이터 DB입력 작동 여부 확인");
     }
 }

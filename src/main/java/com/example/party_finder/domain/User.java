@@ -15,7 +15,7 @@ public class User {
     @Column(nullable = false, unique = true) // 비어있으면 안 되고, 중복도 안 됨
     private String username;
 
-    @Column(nullable = false)
+    @Column(nullable = false) //열을 생성하고, 데이터 규칙을 설정한 것)
     private String password;
 
     private String nickname;
